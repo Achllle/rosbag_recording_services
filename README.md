@@ -39,31 +39,21 @@ stop_record_srv(TriggerRequest())
 ### Annotations
 
 From within the code you can add annotations to the stored rosbags by publishing 
-strings to a special topic `/data_recording/annotations`. 
+strings to a special topic `/data_recording/annotations`. These messages are then displayed on Rviz
+so you can analyze important events that happened in the code. This feature is optional.
+
 Simply create a publisher in your initialization: 
 ```python
 annotation_pub = rospy.Publisher('/data_recording/annotations', Marker, queue_size=10)
 ```
 and add `from visualization_msgs.msg import Marker` to your imports.
 
-Then create a text marker:
-
-```python
-text_marker = Marker()
-text_marker.header.stamp = rospy.get_rostime()
-text_marker.header.frame_id = "/world" # You can also put text on say the end effector!
-text_marker.type = 9  # this specifies that the marker is a text marker
-text_marker.pose.position = {x: 0.0, y: 0.0, z: 0.0}
-text_marker.pose.orientation = {x: 0.0, y: 0.0, z: 0.0, w: 0.0}
-text_marker.scale = {x: 0.5, y: 0.5, z: 0.5} # units?
-text_marker.color = {r: 1.0, g: 0.0, b: 0.0, a: 1.0} # make sure 'a' is set to >0, otherwise invisible
-text_marker.lifetime = {secs: 2, nsecs: 0}
-text_marker.text = "Your message here"
-```
-
-You probably want to wrap this in a utils method that you can import.
+Then create a text marker. See `example.py` for a function that does this.
 
 Publish an annotation any time anywhere using `annotation_pub.publish(text_marker)`
+
+If you want to test this functionality, launch the data_recording services as outlined above and
+run `rosrun data_recording example.py`.
 
 ## Replaying a rosbag
 

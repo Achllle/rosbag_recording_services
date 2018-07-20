@@ -1,10 +1,10 @@
 <launch>
     <!-- arguments -->
     <arg name="filename"
-         doc="specify which file you'd like to load for replay">
+         doc="specify which file you'd like to load for replay. Don't include the extension">
     </arg>
     <arg name="filepath"
-         default="/home/your/path/here"
+         default="$(find data_recording)/rosbags"
          doc="specify where the rosbag(s) live on your machine">
     </arg>
     <arg name="mode"
@@ -19,6 +19,6 @@
     <node type="rviz" name="rviz" pkg="rviz" args="-d $(find data_recording)/config/$(arg mode).rviz" />
 
     <!-- Playing the contents of the specified rosbag -->
-    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg filepath)/$(arg filename)"/>
+    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock $(arg filepath)/$(arg filename).bag"/>
 
 </launch>

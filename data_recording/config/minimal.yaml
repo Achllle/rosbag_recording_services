@@ -1,8 +1,5 @@
 # Configuration parameters for data recording node.
 
-# Please keep your changes to this path local
-output_directory: '/home/your/path/here'
-
 topics:
   - '/camera/aligned_depth_to_color/image_raw'
   - '/camera/aligned_depth_to_color/camera_info'
