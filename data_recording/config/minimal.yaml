@@ -8,6 +8,6 @@ topics:
   - '/camera/aligned_depth_to_color/camera_info'
   - '/camera/color/image_raw'
   - '/camera/color/camera_info'
-  - '/ggcnn_cout/command'
+  - '/ggcnn_out/command'
   - '/tf'
   - '/data_recording/annotations'

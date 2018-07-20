@@ -31,9 +31,9 @@ stop_record_srv = rospy.ServiceProxy('/data_recording/stop_recording', Trigger)
 Then in a regular service call:
 
 ```python
-start_record_srv(std_srvs.srv.TriggerRequest())
+start_record_srv(TriggerRequest())
 do_some_stuff()
-stop_record_srv(std_srvs.srv.TriggerRequest())
+stop_record_srv(TriggerRequest())
 ```
 
 ### Annotations
