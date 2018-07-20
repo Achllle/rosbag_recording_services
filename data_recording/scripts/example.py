@@ -11,19 +11,20 @@ def something_interesting():
     """Dummy thing that takes up time"""
     global annotation_pub
 
-    rospy.sleep(2)
+    rospy.sleep(4)
 
     marker1 = create_text_marker("hello world!", [1, 1, 0])
     annotation_pub.publish(marker1)
 
     rospy.sleep(3)
-    marker2 = create_text_marker("I'm another marker", [0, 0, 1], scale=[1, 1, 1], color=[0, 1, 0, 1],
+    marker2 = create_text_marker("I'm another marker", [0, 0, 1], scale=[0.2, 0.2, 0.2], color=[0, 1, 0, 1],
                                  duration=[2, 500])
     annotation_pub.publish(marker2)
-    rospy.sleep(3)
+
+    rospy.sleep(1)
 
 
-def create_text_marker(text, position, orientation=[0, 0, 0, 1], frame_id='/world', scale=[0.5, 0.5, 0.5],
+def create_text_marker(text, position, orientation=[0, 0, 0, 1], frame_id='/world', scale=[0.3, 0.3, 0.3],
                        color=[1.0, 0.0, 0.0, 1.0], duration=[1, 0]):
     """Create and populate a message of type visualization_msgs.msg/Marker
 
@@ -70,7 +71,11 @@ if __name__ == '__main__':
 
     start_record_srv(TriggerRequest())
     # now do something we want to record
-    something_interesting()
+    try:
+        something_interesting()
+    except Exception as e:
+        stop_record_srv(TriggerRequest())
+        raise e
     stop_record_srv(TriggerRequest())
 
     rospy.loginfo('Example code has completed, please refer to README on how to replay the data')
