@@ -25,6 +25,6 @@
           name="player"
           output="screen"
           args="--clock --pause --loop $(arg filepath)/$(arg filename).bag"/>
-          <!--required="true"-->
+          required="true"
 
 </launch>
