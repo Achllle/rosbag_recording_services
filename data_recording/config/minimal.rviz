@@ -5,6 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /TF1/Status1
         - /DepthCloud1/Auto Size1
       Splitter Ratio: 0.605597973
     Tree Height: 747
@@ -143,19 +144,76 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        G:
+          Value: true
+        camera_link:
+          Value: false
+        m1n6s300_end_effector:
+          Value: true
+        m1n6s300_link_1:
+          Value: false
+        m1n6s300_link_2:
+          Value: false
+        m1n6s300_link_3:
+          Value: false
+        m1n6s300_link_4:
+          Value: false
+        m1n6s300_link_5:
+          Value: false
+        m1n6s300_link_6:
+          Value: false
+        m1n6s300_link_base:
+          Value: false
+        m1n6s300_link_finger_1:
+          Value: false
+        m1n6s300_link_finger_2:
+          Value: false
+        m1n6s300_link_finger_3:
+          Value: false
+        m1n6s300_link_finger_tip_1:
+          Value: false
+        m1n6s300_link_finger_tip_2:
+          Value: false
+        m1n6s300_link_finger_tip_3:
+          Value: false
+        root:
+          Value: false
+        world:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        {}
+        world:
+          root:
+            m1n6s300_link_base:
+              G:
+                {}
+              m1n6s300_link_1:
+                m1n6s300_link_2:
+                  m1n6s300_link_3:
+                    m1n6s300_link_4:
+                      m1n6s300_link_5:
+                        m1n6s300_link_6:
+                          m1n6s300_end_effector:
+                            {}
+                          m1n6s300_link_finger_1:
+                            m1n6s300_link_finger_tip_1:
+                              {}
+                          m1n6s300_link_finger_2:
+                            m1n6s300_link_finger_tip_2:
+                              {}
+                          m1n6s300_link_finger_3:
+                            m1n6s300_link_finger_tip_3:
+                              {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Alpha: 1
       Axes Length: 0.119999997
       Axes Radius: 0.00999999978

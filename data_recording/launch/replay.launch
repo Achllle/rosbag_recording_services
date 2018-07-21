@@ -23,7 +23,7 @@
           type="play"
           name="player"
           output="screen"
-          args="--clock $(arg filepath)/$(arg filename).bag"
-          required="true"/>
+          args="--clock $(arg filepath)/$(arg filename).bag"/>
+          <!--required="true"-->
 
 </launch>
