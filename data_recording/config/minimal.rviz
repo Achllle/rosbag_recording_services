@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1/Status1
         - /DepthCloud1/Auto Size1
       Splitter Ratio: 0.605597973
     Tree Height: 747
@@ -27,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: DepthCloud
 Visualization Manager:
   Class: ""
   Displays:
@@ -150,6 +149,28 @@ Visualization Manager:
         All Enabled: false
         G:
           Value: true
+        camera_aligned_depth_to_color_frame:
+          Value: true
+        camera_aligned_depth_to_infra1_frame:
+          Value: true
+        camera_aligned_depth_to_infra2_frame:
+          Value: true
+        camera_color_frame:
+          Value: true
+        camera_color_optical_frame:
+          Value: true
+        camera_depth_frame:
+          Value: true
+        camera_depth_optical_frame:
+          Value: true
+        camera_infra1_frame:
+          Value: true
+        camera_infra1_optical_frame:
+          Value: true
+        camera_infra2_frame:
+          Value: true
+        camera_infra2_optical_frame:
+          Value: true
         camera_link:
           Value: false
         m1n6s300_end_effector:
@@ -201,6 +222,25 @@ Visualization Manager:
                     m1n6s300_link_4:
                       m1n6s300_link_5:
                         m1n6s300_link_6:
+                          camera_link:
+                            camera_aligned_depth_to_color_frame:
+                              camera_color_optical_frame:
+                                {}
+                            camera_aligned_depth_to_infra1_frame:
+                              camera_infra1_optical_frame:
+                                {}
+                            camera_aligned_depth_to_infra2_frame:
+                              camera_infra2_optical_frame:
+                                {}
+                            camera_color_frame:
+                              {}
+                            camera_depth_frame:
+                              camera_depth_optical_frame:
+                                {}
+                            camera_infra1_frame:
+                              {}
+                            camera_infra2_frame:
+                              {}
                           m1n6s300_end_effector:
                             {}
                           m1n6s300_link_finger_1:
@@ -246,7 +286,7 @@ Visualization Manager:
       Color Transformer: RGB8
       Color Transport Hint: raw
       Decay Time: 0
-      Depth Map Topic: /camera/depth/image_rect_raw
+      Depth Map Topic: /camera/aligned_depth_to_color/image_raw
       Depth Map Transport Hint: raw
       Enabled: true
       Invert Rainbow: false
@@ -272,7 +312,7 @@ Visualization Manager:
       Marker Topic: /data_recording/annotations
       Name: Marker
       Namespaces:
-        {}
+        "": true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -300,25 +340,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.57660246
+      Distance: 0.535962105
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -1.37221408
-        Y: -1.25363851
-        Z: 0.92575115
+        X: -0.112777293
+        Y: 0.980374992
+        Z: 1.04466462
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.484797418
+      Pitch: 0.674797177
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.94726253
+      Yaw: 1.94725144
     Saved: ~
 Window Geometry:
   Displays:
