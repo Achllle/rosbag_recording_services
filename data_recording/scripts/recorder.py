@@ -38,8 +38,9 @@ class DataRecorder():
             rospy.logerr('Already Recording')
             return RecordResponse(False, 'Already Recording')
 
-        if req.bagname != '':
-            command = ['rosrun', 'rosbag', 'record', '-e', '-O', req.bagname] + self.topics + \
+        self.bagname = req.bagname
+        if self.bagname != '':
+            command = ['rosrun', 'rosbag', 'record', '-e', '-O', self.bagname] + self.topics + \
                       ['__name:=data_recording_myrecorder']
         else: # default to datetime bag name
             command = ['rosrun', 'rosbag', 'record', '-e'] + self.topics + \
@@ -59,7 +60,20 @@ class DataRecorder():
         self.process = None
         self.recording = False
 
-        rospy.loginfo('Stopped Recording')
+        rospy.loginfo('Stopped Recording, Compressing...')
+
+        # open a subprocess for compressing the bag
+        bag_path = self.output_directory + '/' + self.bagname
+        compr_command = ['rosbag', 'compress',
+                         bag_path + '.bag', '--output-dir', self.output_directory]
+        result = subprocess.call(compr_command)
+
+        if result == 0:  # compression succeeded
+            subprocess.call(['rm', bag_path + '.orig.bag'])
+            rospy.loginfo('Compression successful')
+        else:
+            rospy.logerr('Compression failed')
+
         return TriggerResponse(True, 'Stopped Recording')
 
 
