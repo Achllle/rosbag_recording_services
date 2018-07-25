@@ -26,7 +26,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: DepthCloud
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -147,32 +147,30 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        G:
-          Value: true
         camera_aligned_depth_to_color_frame:
-          Value: true
-        camera_aligned_depth_to_infra1_frame:
-          Value: true
-        camera_aligned_depth_to_infra2_frame:
-          Value: true
-        camera_color_frame:
-          Value: true
-        camera_color_optical_frame:
-          Value: true
-        camera_depth_frame:
-          Value: true
-        camera_depth_optical_frame:
-          Value: true
-        camera_infra1_frame:
-          Value: true
-        camera_infra1_optical_frame:
-          Value: true
-        camera_infra2_frame:
-          Value: true
-        camera_infra2_optical_frame:
-          Value: true
-        camera_link:
           Value: false
+        camera_aligned_depth_to_infra1_frame:
+          Value: false
+        camera_aligned_depth_to_infra2_frame:
+          Value: false
+        camera_color_frame:
+          Value: false
+        camera_color_optical_frame:
+          Value: false
+        camera_depth_frame:
+          Value: false
+        camera_depth_optical_frame:
+          Value: false
+        camera_infra1_frame:
+          Value: false
+        camera_infra1_optical_frame:
+          Value: false
+        camera_infra2_frame:
+          Value: false
+        camera_infra2_optical_frame:
+          Value: false
+        camera_link:
+          Value: true
         m1n6s300_end_effector:
           Value: true
         m1n6s300_link_1:
@@ -205,17 +203,15 @@ Visualization Manager:
           Value: false
         world:
           Value: true
-      Marker Scale: 1
+      Marker Scale: 0.800000012
       Name: TF
-      Show Arrows: true
+      Show Arrows: false
       Show Axes: true
       Show Names: false
       Tree:
         world:
           root:
             m1n6s300_link_base:
-              G:
-                {}
               m1n6s300_link_1:
                 m1n6s300_link_2:
                   m1n6s300_link_3:
@@ -312,7 +308,7 @@ Visualization Manager:
       Marker Topic: /data_recording/annotations
       Name: Marker
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
