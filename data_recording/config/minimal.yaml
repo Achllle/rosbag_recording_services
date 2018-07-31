@@ -10,4 +10,3 @@ topics:
   - '/tf_static'
   - '/joint_states'
   - '/data_recording/annotations'
-  - '/usb_cam/image_raw'
