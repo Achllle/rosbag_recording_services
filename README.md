@@ -6,10 +6,12 @@ analyzing performance. You can add annotations from within the code that will ap
 ## Run
 `roslaunch data_recording data_recording.launch` uses the default mode:=minimal.
 
+If you want to record the webcam stream, choose the proper config (see below) and `roslaunch data_recording webcam.launch`, making sure the udev rule for the logitech is installed.
+
 ## Config
 The config files for the recording are in the config directory. You can choose between different settings and add new config files.
 Configure the output directory for the rosbag files and topics to be recorded (regex syntax is ok).
-Rosbag files are saved with the current date and time as a filename.
+Rosbag files are saved with the current date and time as a filename if no name is provided.
 
 ## Usage
 
